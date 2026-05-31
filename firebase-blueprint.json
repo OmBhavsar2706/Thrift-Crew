@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "user": {
+      "title": "User Profile",
+      "description": "User account details saved during Google login/registration",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "The unique user authentication ID"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "The display name of the authenticated user"
+        },
+        "email": {
+          "type": "string",
+          "description": "The Google account email registered"
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "The profile picture thumbnail URL"
+        },
+        "lastLogin": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO timestamp indicating when the user last authenticated"
+        }
+      },
+      "required": ["uid", "email"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "user",
+      "description": "Collection mapping individual registered shopper profiles by user ID"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 1. Catch-all fallback default-deny rule
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Auth & Identity Validation Helpers
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // 2. Exact Shape Validation helper for User Document structure
+    function isValidUser(data) {
+      return data.uid is string && data.uid.size() <= 128
+        && (data.displayName == null || (data.displayName is string && data.displayName.size() <= 200))
+        && (data.email == null || (data.email is string && data.email.size() <= 256))
+        && (data.photoURL == null || (data.photoURL is string && data.photoURL.size() <= 1024))
+        && (data.lastLogin == null || (data.lastLogin is string && data.lastLogin.size() <= 64));
+    }
+
+    // Secure Rules mapping user profiles by authenticated UID
+    match /users/{userId} {
+      allow get: if isOwner(userId);
+      allow create: if isOwner(userId) 
+        && isValidId(userId)
+        && request.resource.data.uid == userId
+        && isValidUser(request.resource.data);
+      allow update: if isOwner(userId)
+        && isValidId(userId)
+        && request.resource.data.uid == userId
+        && isValidUser(request.resource.data)
+        && request.resource.data.email == resource.data.email;
+      allow delete: if false;
+    }
+  }
+}

@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@variant dark (.dark &);
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --color-cream: #FCFCFA;
+  --color-navy: #0A2540;
+  --color-ink: #000000;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* ==========================================
+   LIGHT MODE CONTRAST OVERRIDES
+   ========================================== */
+html:not(.dark) {
+  --color-cream: #FCFCFA;
+  --color-ink: #000000;
+}
+
+html:not(.dark) body {
+  background-color: #FCFCFA !important;
+  color: #000000 !important;
+}
+
+html:not(.dark) .text-\[\#111111\],
+html:not(.dark) .text-neutral-900,
+html:not(.dark) .text-black {
+  color: #000000 !important;
+}
+
+html:not(.dark) .text-\[\#111111\]\/85 {
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+html:not(.dark) .text-\[\#111111\]\/65 {
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+html:not(.dark) .text-neutral-500,
+html:not(.dark) .text-neutral-600 {
+  color: #3f3f46 !important; /* Premium readable charcoal gray */
+}
+
+html:not(.dark) .text-neutral-400 {
+  color: #52525b !important; /* High contrast mid-dark gray for subtitles */
+}
+
+html:not(.dark) .bg-\[\#F5F1E8\],
+html:not(.dark) .bg-\[\#FDFBF7\] {
+  background-color: #fafaf9 !important; /* Elegant warm stone light background */
+}
+
+/* ==========================================
+   SMOOTH TRANSITIONS & TRANSFORMS
+   ========================================== */
+html, body, header, section, div, button, span, p, a, input, select, textarea {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, fill 0.3s ease;
+}
+
+/* ==========================================
+   DARK THEME PALETTE OVERRIDES
+   ========================================== */
+html.dark {
+  --color-cream: #0c0c0c;
+  --color-ink: #f8fafc;
+  --color-navy: #BEB49B;
+}
+
+html.dark body {
+  background-color: #0c0c0c !important;
+  color: #eeeeee !important;
+}
+
+/* Header in Dark Mode */
+html.dark header {
+  background-color: #121212 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* SVG Logo letters color swaps */
+html.dark svg path[fill="#4C2D3C"] {
+  fill: #ffffff !important;
+}
+html.dark svg path[fill="#BEB49B"] {
+  fill: #BEB49B !important;
+}
+
+/* Base class conversions for arbitrary Tailwind values */
+html.dark .text-\[\#111111\],
+html.dark .text-slate-800,
+html.dark .text-black,
+html.dark header .text-black,
+html.dark header svg {
+  color: #eeeeee !important;
+}
+
+html.dark .border-\[\#111111\]\/15,
+html.dark .border-black\/5 {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Header button spans (hamburger lines) */
+html.dark header button span {
+  background-color: #eeeeee !important;
+}
+html.dark header button:hover span {
+  background-color: #BEB49B !important;
+}
+
+/* Sections & Layout Elements */
+html.dark section {
+  background-color: #0c0c0c !important;
+}
+
+html.dark section#shop {
+  background-color: #121212 !important;
+}
+
+/* Input Fields, select fields, textareas */
+html.dark select, 
+html.dark option,
+html.dark input {
+  background-color: #181c20 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Custom Sticky filtering sorting bar in Shop */
+html.dark section#shop .sticky {
+  background-color: #121212 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark section#shop .sticky button {
+  color: #eeeeee !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark section#shop .sticky button:hover {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+html.dark .text-ink {
+  color: #ffffff !important;
+}
+
+html.dark .text-ink\/95,
+html.dark .text-\[\#111111\]\/95 {
+  color: rgba(238, 238, 238, 0.95) !important;
+}
+
+html.dark .text-ink\/90,
+html.dark .text-\[\#111111\]\/90 {
+  color: rgba(238, 238, 238, 0.9) !important;
+}
+
+html.dark .text-ink\/85,
+html.dark .text-\[\#111111\]\/85 {
+  color: rgba(238, 238, 238, 0.85) !important;
+}
+
+html.dark .text-ink\/80,
+html.dark .text-\[\#111111\]\/80 {
+  color: rgba(238, 238, 238, 0.8) !important;
+}
+
+html.dark .text-ink\/75,
+html.dark .text-\[\#111111\]\/75 {
+  color: rgba(238, 238, 238, 0.75) !important;
+}
+
+html.dark .text-ink\/70,
+html.dark .text-\[\#111111\]\/70 {
+  color: rgba(238, 238, 238, 0.7) !important;
+}
+
+html.dark .text-ink\/65,
+html.dark .text-\[\#111111\]\/65 {
+  color: rgba(238, 238, 238, 0.65) !important;
+}
+
+html.dark .text-ink\/60,
+html.dark .text-\[\#111111\]\/60 {
+  color: rgba(238, 238, 238, 0.6) !important;
+}
+
+html.dark .text-ink\/50,
+html.dark .text-\[\#111111\]\/50 {
+  color: rgba(238, 238, 238, 0.5) !important;
+}
+
+html.dark .text-ink\/40,
+html.dark .text-\[\#111111\]\/40 {
+  color: rgba(238, 238, 238, 0.4) !important;
+}
+
+html.dark .text-ink\/30,
+html.dark .text-\[\#111111\]\/30 {
+  color: rgba(238, 238, 238, 0.35) !important;
+}
+
+html.dark .placeholder\:text-\[\#111111\]\/30::placeholder {
+  color: rgba(238, 238, 238, 0.35) !important;
+}
+
+html.dark .text-neutral-500,
+html.dark .text-neutral-600 {
+  color: #94a3b8 !important;
+}
+
+/* Categories page bubble borders & text */
+html.dark .text-\[\#0A2540\] {
+  color: #BEB49B !important;
+}
+
+html.dark .border-\[\#0A2540\]\/20 {
+  border-color: rgba(190, 180, 155, 0.25) !important;
+}
+
+html.dark .group:hover .border-\[\#0A2540\] {
+  border-color: #BEB49B !important;
+}
+
+html.dark .border-ink\/10,
+html.dark .border-neutral-100,
+html.dark .border-slate-150 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark .bg-white {
+  background-color: #121212 !important;
+}
+
+html.dark .bg-white\/95 {
+  background-color: rgba(18, 18, 18, 0.95) !important;
+}
+
+html.dark .bg-neutral-50,
+html.dark .bg-\[\#fafafa\] {
+  background-color: #181818 !important;
+}
+
+html.dark .bg-\[\#111111\] {
+  background-color: #BEB49B !important;
+  color: #0c0c0c !important;
+}
+
+/* FAQ section dark adjustments */
+html.dark #faq {
+  background-color: #0c0c0c !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark #faq h2 {
+  color: #ffffff !important;
+}
+
+html.dark #faq .border-slate-800 {
+  border-color: #BEB49B !important;
+}
+
+html.dark #faq .border-slate-100 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark #faq .text-\[\#1e293b\],
+html.dark #faq .text-black {
+  color: #ffffff !important;
+}
+
+html.dark #faq .text-\[\#475569\] {
+  color: #cbd5e1 !important;
+}
+
+html.dark #faq .bg-\[\#fafafa\], html.dark #faq .bg-white {
+  background-color: #121212 !important;
+}
+
+/* Slide-out Drawers (Cart, Menu, Search) */
+html.dark .fixed.bg-white,
+html.dark .fixed {
+  background-color: #121212 !important;
+  color: #eeeeee !important;
+}
+
+html.dark .fixed .border-b,
+html.dark .fixed .border-t,
+html.dark .fixed .border-l {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark .hover\:bg-neutral-50:hover {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+html.dark .hover\:bg-neutral-100:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+html.dark .bg-\[\#0A2540\] {
+  background-color: #BEB49B !important;
+  color: #121212 !important;
+}
+
+html.dark .text-navy {
+  color: #BEB49B !important;
+}
+
+html.dark .bg-navy {
+  background-color: #BEB49B !important;
+}
+
+/* User identity dashboard background override */
+html.dark .bg-neutral-950\/60 {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Policies page overrides */
+html.dark #policies {
+  background-color: #0c0c0c !important;
+}
+
+html.dark #policies h1,
+html.dark #policies h2,
+html.dark #policies h3 {
+  color: #ffffff !important;
+}
+
+html.dark #policies .border-\[\#BEB49B\]\/30 {
+  border-color: rgba(190, 180, 155, 0.3) !important;
+}
+
+/* Card details/product page details & payment select label methods */
+html.dark select[name="paymentMethod"] {
+  background-color: #181818 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html.dark .bg-\[\#F5F1E8\],
+html.dark .bg-\[\#F5F1E8\]\/40,
+html.dark .bg-\[\#F5F1E8\]\/70 {
+  background-color: rgba(24, 24, 24, 0.8) !important;
+}
+
+html.dark .bg-\[\#F5F1E8\] *,
+html.dark .bg-\[\#F5F1E8\]\/40 *,
+html.dark .bg-\[\#F5F1E8\]\/70 * {
+  color: #eeeeee !important;
+}
+
+/* Product detail text fixes */
+html.dark .text-ink\/65,
+html.dark .text-\[\#111111\]\/65 {
+  color: rgba(238, 238, 238, 0.65) !important;
+}
+
+/* Standard scrollbars & misc adjustments and smooth transition */
+html.dark ::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #333333;
+}

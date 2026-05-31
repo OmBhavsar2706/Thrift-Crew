@@ -1,0 +1,8 @@
+{
+  "name": "Thrift Unicorn",
+  "description": "Premium modern ecommerce website for a clothing thrift/streetwear brand named Swift Unicorn.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
