@@ -1,20 +1,77 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Thrift Crew
 
-# Run and deploy your AI Studio app
+## Overview
 
-This contains everything you need to run your app locally.
+Thrift Crew is a modern full-stack fashion e-commerce platform designed to deliver a premium online shopping experience for clothing, accessories, and streetwear enthusiasts. Built using React, TypeScript, Vite, Firebase, and Shopify integrations, the platform combines modern design with scalable architecture and high-performance web technologies.
 
-View your app in AI Studio: https://ai.studio/apps/15f8adb8-95b7-4d24-8fbc-cd7daf67220e
+## Features
 
-## Run Locally
+* Modern and responsive user interface
+* Fashion-focused product catalog
+* Product search and filtering
+* Shopping cart functionality
+* Secure user authentication
+* Firebase-powered backend services
+* Shopify integration
+* Mobile-friendly design
+* Fast and optimized performance
+* Component-based architecture
 
-**Prerequisites:**  Node.js
+## Tech Stack
 
+### Frontend
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+
+### Backend & Services
+
+* Firebase
+* Firestore
+* Shopify API
+
+### Tools
+
+* Git
+* GitHub
+* Vercel
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/OmBhavsar2706/Thrift-Crew.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+## Project Goal
+
+The goal of Thrift Crew is to provide a seamless and modern digital shopping experience that combines contemporary fashion aesthetics with scalable web technologies, ensuring excellent usability across all devices.
+
+## Author
+
+**Om Bhavsar**
+
+Full-Stack Web Developer
+
+GitHub: https://github.com/OmBhavsar2706
