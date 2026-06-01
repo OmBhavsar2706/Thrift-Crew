@@ -1,7 +1,15 @@
 import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
-import firebaseConfig from '../../firebase-applet-config.json';
+const firebaseConfig = {
+  apiKey: "AIzaSyASutgbBiEaDg0fWRavedr2-MoAAS7IXz0",
+  authDomain: "thrift-crew.firebaseapp.com",
+  projectId: "thrift-crew",
+  storageBucket: "thrift-crew.firebasestorage.app",
+  messagingSenderId: "627561319109",
+  appId: "1:627561319109:web:10a818cb9db373d7963eac",
+  measurementId: "G-W67XX3S453"
+};
 
 export enum OperationType {
   CREATE = 'create',
